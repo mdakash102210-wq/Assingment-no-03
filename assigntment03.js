@@ -16,7 +16,8 @@
 //   let fainalNewPrice = newPrice;
 //   return fainalNewPrice;
 // }
-// let result = newPrice(1500, 20);
+
+// let result = newPrice(2000, 15);
 
 // console.log(result);
 
@@ -71,7 +72,7 @@
 // 4 no problem start
 
 // function gonoVote(array) {
-//   let validity = "invalid";
+//   let validity = "Invalid";
 //   if (Array.isArray(array) == false) {
 //     return validity;
 //   }
@@ -94,10 +95,12 @@
 //     return "equal";
 //   }
 // }
-// let result = gonoVote(12345);
+
+// let result = gonoVote("ha, na");
 // console.log(result);
 
 // 5 no problem start
+
 function analyzeText(str) {
   let validity = "Invalid";
   let storword = "";
@@ -106,6 +109,9 @@ function analyzeText(str) {
     return validity;
   }
   if (str == " ") {
+    return validity;
+  }
+  if (str == "") {
     return validity;
   }
   for (let chr of str) {
@@ -125,5 +131,5 @@ function analyzeText(str) {
     token: token,
   };
 }
-let result = analyzeText(" ");
-console.log(result);
+// let result = analyzeText(" ");
+// console.log(result);
