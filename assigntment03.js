@@ -65,36 +65,65 @@
 //   let fainalResult = Totalresult;
 //   return fainalResult;
 // }
-// let result = finalScore(["Raj"]);
+// let result = finalScore({ right: 67, wrong: 23, skip: 10 });
 // console.log(result);
 
 // 4 no problem start
 
-function gonoVote(array) {
-  let validity = "invalid";
-  if (Array.isArray(array) == false) {
+// function gonoVote(array) {
+//   let validity = "invalid";
+//   if (Array.isArray(array) == false) {
+//     return validity;
+//   }
+//   let besi = 0;
+//   let kom = 0;
+//   let soman = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] == "ha") {
+//       besi++;
+//     } else if (array[i] == "na") {
+//       kom++;
+//     }
+//   }
+
+//   if (besi > kom) {
+//     return true;
+//   } else if (besi < kom) {
+//     return false;
+//   } else {
+//     return "equal";
+//   }
+// }
+// let result = gonoVote(12345);
+// console.log(result);
+
+// 5 no problem start
+function analyzeText(str) {
+  let validity = "Invalid";
+  let storword = "";
+  let token = 0;
+  if (typeof str !== "string") {
     return validity;
   }
-  let besi = 0;
-  let kom = 0;
-  let soman = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] == "ha") {
-      besi++;
-    } else if (array[i] == "na") {
-      kom++;
+  if (str == " ") {
+    return validity;
+  }
+  for (let chr of str) {
+    if (chr !== " ") {
+      token++;
     }
   }
 
-  if (besi > kom) {
-    return true;
-  } else if (besi < kom) {
-    return false;
-  } else {
-    return "equal";
+  let split = str.split(" ");
+  for (let bigest of split) {
+    if (bigest.length > storword.length) {
+      storword = bigest;
+    }
   }
+  return {
+    longwords: storword,
+    token: token,
+  };
 }
-let result = gonoVote(12345);
+let result = analyzeText(" ");
 console.log(result);
-
-// 5 no problem start
