@@ -42,30 +42,59 @@
 
 // // 3 no problem start
 
-function finalScore(omr) {
-  let count = 0;
-  let valids = "Invalid";
-  if (Array.isArray(omr) == true) {
-    return valids;
+// function finalScore(omr) {
+//   let count = 0;
+//   let valids = "Invalid";
+//   if (Array.isArray(omr) == true) {
+//     return valids;
+//   }
+//   if (typeof omr !== "object") {
+//     return valids;
+//   }
+//   for (let score in omr) {
+//     count = omr[score] + count;
+//   }
+//   if (count > 100 || count < 100) {
+//     return valids;
+//   }
+//   let wrongResult = omr["wrong"] * 0.5;
+//   let rightResult = omr["right"];
+//   let skipResukt = omr["skip"] * 0;
+//   let Totalresult = rightResult - wrongResult - skipResukt;
+//   Totalresult = Math.round(Totalresult);
+//   let fainalResult = Totalresult;
+//   return fainalResult;
+// }
+// let result = finalScore(["Raj"]);
+// console.log(result);
+
+// 4 no problem start
+
+function gonoVote(array) {
+  let validity = "invalid";
+  if (Array.isArray(array) == false) {
+    return validity;
   }
-  if (typeof omr !== "object") {
-    return valids;
+  let besi = 0;
+  let kom = 0;
+  let soman = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == "ha") {
+      besi++;
+    } else if (array[i] == "na") {
+      kom++;
+    }
   }
-  for (let score in omr) {
-    count = omr[score] + count;
+
+  if (besi > kom) {
+    return true;
+  } else if (besi < kom) {
+    return false;
+  } else {
+    return "equal";
   }
-  if (count > 100 || count < 100) {
-    return valids;
-  }
-  let wrongResult = omr["wrong"] * 0.5;
-  let rightResult = omr["right"];
-  let skipResukt = omr["skip"] * 0;
-  let Totalresult = rightResult - wrongResult - skipResukt;
-  Totalresult = Math.round(Totalresult);
-  let fainalResult = Totalresult;
-  return fainalResult;
 }
-let result = finalScore(["Raj"]);
+let result = gonoVote(12345);
 console.log(result);
 
-// // 4 no problem start
+// 5 no problem start
