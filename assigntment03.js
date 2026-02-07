@@ -13,10 +13,13 @@ function newPrice(currentPrice, discount) {
   let discountPrice = (currentPrice * discount) / 100;
   let newPrice = currentPrice - discountPrice;
   newPrice = newPrice.toFixed(3);
-  return newPrice;
+  let fainalNewPrice = newPrice;
+  return fainalNewPrice;
 }
-let result = newPrice(500, "5");
+let result = newPrice(1500, 20);
 
 console.log(result);
 
 // git push dane
+
+// 2 no problem start
