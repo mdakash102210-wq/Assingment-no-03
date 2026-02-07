@@ -18,3 +18,5 @@ function newPrice(currentPrice, discount) {
 let result = newPrice(500, "5");
 
 console.log(result);
+
+// git push dane
